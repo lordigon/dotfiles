@@ -22,8 +22,8 @@ main() {
   # Example:
   # SCRIPT_DIR:   /Users/mario/dotfiles
   # DOTFILES_DIR: /Users/mario/
-  DOTFILE_DIR_NAME=dotfiles
-  DOTFILE_DIR_BACKUP_NAME=dotfiles_bck
+  DOTFILE_DIR_NAME=.dotfiles
+  DOTFILE_DIR_BACKUP_NAME=.dotfiles_bck
 
   # -n parameter do not actually make any filesystem changes
   declare -rx stow="stow -n"
