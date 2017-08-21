@@ -36,7 +36,6 @@ formulas=(
   grep
   rsync
   unzip
-  nano
   less
   gzip
   bash
@@ -53,16 +52,21 @@ formulas=(
   trash
   python
   python3
-  mac-vim --with-override-system-vim
+  'mac-vim --with-override-system-vim'
+  neovim/neovim/neovim
+  reattach-to-user-namespace
+  the_silver_searcher
+  psgrep
+  ripgrep
   wget
   tmux
   jq
-) 
+)
 
 for formula in "${formulas[@]}"; do
   if brew list "${formaula}" > /dev/null 2>&1; then
     echo "$formula already installed...skipping."
-  else 
+  else
     brew install $formula
   fi
 done
