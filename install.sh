@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ##############################
 # dotfiles installation script
 #
@@ -33,7 +33,7 @@ main() {
   export SCRIPT_DIR
   export DOTFILES_DIR
 
-  
+
   # Check that DOTFILES_DIR
   #if ! [ "${DOTFILES_DIR}" = "${HOME}/${DOTFILE_DIR_NAME}" ]; then
   #  print_error "Script root directory must be ${HOME}/${DOTFILE_DIR_NAME}."
@@ -124,7 +124,7 @@ main() {
   ${stow} git
   print_info "stow zsh file/s"
   ${stow} zsh
-  
+
   # Add specific application installations. Every folder can contain install.sh file to
   # install application specific stuff and ._app_aliases file to source specific application alias.
   declare -a APP_FOLDER=(
