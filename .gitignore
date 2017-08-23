@@ -27,4 +27,4 @@ Thumbs.db
 scratch/
 
 # Don't want to put local resources to GitHub
-localrc
+localrc.symlink
