@@ -17,22 +17,22 @@ for file in $linkables ; do
     fi
 done
 
-print_info -e "\n\ninstalling to ~/.config"
-print_info "=============================="
-if [ ! -d $HOME/.config ]; then
-    print_info "Creating ~/.config"
-    mkdir -p $HOME/.config
-fi
+#print_info -e "\n\ninstalling to ~/.config"
+#print_info "=============================="
+#if [ ! -d $HOME/.config ]; then
+#    print_info "Creating ~/.config"
+#    mkdir -p $HOME/.config
+#fi
 
-for config in $DOTFILES/config/*; do
-    target=$HOME/.config/$( basename $config )
-    if [ -e $target ]; then
-        print_question "~${target#$HOME} already exists... Skipping."
-    else
-        print_info "Creating symlink for $config"
-        ln -s $config $target
-    fi
-done
+#for config in $DOTFILES/config/*; do
+#    target=$HOME/.config/$( basename $config )
+#    if [ -e $target ]; then
+#        print_question "~${target#$HOME} already exists... Skipping."
+#    else
+#        print_info "Creating symlink for $config"
+#        ln -s $config $target
+#    fi
+#done
 
 # create vim symlinks
 # As I have moved off of vim as my full time editor in favor of neovim,
@@ -41,18 +41,18 @@ done
 # like to configure vim, so lets symlink ~/.vimrc and ~/.vim over to their
 # neovim equivalent.
 
-print_info "\n\nCreating vim symlinks"
-print_info "=============================="
-VIMFILES=( "$HOME/.vim:$DOTFILES/vim/.vim"
-        "$HOME/.vimrc:$DOTFILES/vim/.vimrc" )
+#print_info "\n\nCreating vim symlinks"
+#print_info "=============================="
+#VIMFILES=( "$HOME/.vim:$DOTFILES/vim/.vim"
+#        "$HOME/.vimrc:$DOTFILES/vim/.vimrc" )
 
-for file in "${VIMFILES[@]}"; do
-    KEY=${file%%:*}
-    VALUE=${file#*:}
-    if [ -e ${KEY} ]; then
-        print_question "${KEY} already exists... skipping."
-    else
-        print_info "Creating symlink for $KEY"
-        ln -s ${VALUE} ${KEY}
-    fi
-done
+#for file in "${VIMFILES[@]}"; do
+#    KEY=${file%%:*}
+#    VALUE=${file#*:}
+#    if [ -e ${KEY} ]; then
+#        print_question "${KEY} already exists... skipping."
+#    else
+#        print_info "Creating symlink for $KEY"
+#        ln -s ${VALUE} ${KEY}
+#    fi
+#done
