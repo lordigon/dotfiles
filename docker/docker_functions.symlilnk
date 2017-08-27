@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Dockerfile build, e.g, # dbu lordigon/test
+# 1) paramater: name of the TAG
+function dbu() {
+  docker build -t=$1 .;
+}
+
+# Sho all alias related docker
+function dalias() {
+  alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/" | sed "s/['|\']//g" | sort;
+}
+
+# bash into running container
+# 1) parameter: container name
+function dbash() {
+  docker exec -it $(docker ps -aqf "name=$1") bash;
+}

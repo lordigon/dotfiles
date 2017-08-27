@@ -25,6 +25,7 @@ apps=(
   tower
   macdown
   docker
+  beyond-compare
   virtualbox
   virtualbox-extension-pack
   vagrant

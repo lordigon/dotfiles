@@ -9,6 +9,14 @@ for file in ~/.{path,bash_prompt,exports,aliases,functions,localrc}; do
 done;
 unset file;
 
+# If OSX system install other scripts
+if test "$(uname)" = "Darwin"; then
+  for file in ~/.{exports.osx,aliases.osx,functions.osx}; do
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+  done;
+  unset file;
+fi
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 

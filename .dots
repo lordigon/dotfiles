@@ -33,6 +33,7 @@ function runDots() {
             echo "------------------------------"
             echo ""
             ./brew/brew.sh
+            ./brew/brew-cask.sh
         fi
         if [ $ARG == "osx" ] || [ $ARG == "all" ]; then
             # Run the osx.sh Script
@@ -56,6 +57,14 @@ function runDots() {
             echo "------------------------------"
             echo ""
             ./java/java.sh
+        fi
+        if [ $ARG == "system" ] || [ $ARG == "all" ]; then
+            # Run the install-link.sh script
+            echo "------------------------------"
+            echo "Setting up system files       ."
+            echo "------------------------------"
+            echo ""
+            ./install-link.sh
         fi
         #if [ $ARG == "aws" ] || [ $ARG == "all" ]; then
             # Run the aws.sh Script
