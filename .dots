@@ -50,14 +50,6 @@ function runDots() {
             echo ""
             ./osx.sh
         fi
-        if [ $ARG == "java" ] || [ $ARG == "all" ]; then
-            # Run the pydata.sh Script
-            echo "------------------------------"
-            echo "Setting up Java development environment."
-            echo "------------------------------"
-            echo ""
-            ./java/java.sh
-        fi
         if [ $ARG == "system" ] || [ $ARG == "all" ]; then
             # Run the install-link.sh script
             echo "------------------------------"
@@ -66,7 +58,14 @@ function runDots() {
             echo ""
             ./install-link.sh
         fi
-
+        if [ $ARG == "java" ] || [ $ARG == "all" ]; then
+            # Run the pydata.sh Script
+            echo "------------------------------"
+            echo "Setting up Java development environment."
+            echo "------------------------------"
+            echo ""
+            ./java/java.sh
+        fi
         if [ $ARG == "localrc" ] || [ $ARG == "all" ]; then
             if [ -d ./localrc ] && [ -f ./localrc/install.sh ]; then
               # Run the install-link.sh script

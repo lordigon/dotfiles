@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-source ./git.sh
+source ./maven.sh
