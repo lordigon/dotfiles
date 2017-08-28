@@ -64,7 +64,7 @@ function runDots() {
             echo "Setting up Java development environment."
             echo "------------------------------"
             echo ""
-            ./java/java.sh
+            ./java/install.sh
         fi
         if [ $ARG == "localrc" ] || [ $ARG == "all" ]; then
             if [ -d ./localrc ] && [ -f ./localrc/install.sh ]; then
