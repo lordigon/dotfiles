@@ -21,9 +21,11 @@ brew update
 brew upgrade
 
 formulas=(
+  fish
   zsh
   zsh-completions
   fasd
+  ncdu
   coreutils
   findutils
   moreutils
@@ -52,6 +54,7 @@ formulas=(
   trash
   python
   python3
+  'vim --override-system-vi'
   'mac-vim --with-override-system-vim'
   neovim/neovim/neovim
   reattach-to-user-namespace

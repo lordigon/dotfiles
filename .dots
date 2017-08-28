@@ -61,11 +61,23 @@ function runDots() {
         if [ $ARG == "system" ] || [ $ARG == "all" ]; then
             # Run the install-link.sh script
             echo "------------------------------"
-            echo "Setting up system files       ."
+            echo "Setting up system files      ."
             echo "------------------------------"
             echo ""
             ./install-link.sh
         fi
+
+        if [ $ARG == "localrc" ] || [ $ARG == "all" ]; then
+            if [ -d ./localrc ] && [ -f ./localrc/install.sh ]; then
+              # Run the install-link.sh script
+              echo "------------------------------"
+              echo "Setting up local resources   ."
+              echo "------------------------------"
+              echo ""
+              ./localrc/install.sh
+            fi
+        fi
+
         #if [ $ARG == "aws" ] || [ $ARG == "all" ]; then
             # Run the aws.sh Script
         #    echo "------------------------------"
