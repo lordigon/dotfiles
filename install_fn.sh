@@ -1,17 +1,4 @@
 #!/bin/sh
-##############################
-# dotfiles functions script
-#
-# Author: Barisone Flavio
-#
-# Release Date: 31-07-2017
-#
-# Version: 1.0.0
-#
-# Directory structure
-#
-#
-##############################
 
 # Functions
 print_error() {
@@ -64,7 +51,38 @@ link_file() {
 source_file() {
   if [ -f "$1" ]; then
     source "$1"
-  else 
+  else
     print_question "File $1 doesn't exist. Cannot source it."
   fi
+}
+
+print_install_step_info() {
+  echo ""
+  echo "------------------------------"
+  echo ${1}
+  echo "------------------------------"
+  echo ""
+}
+
+download() {
+    local url="$1"
+    local output="$2"
+
+    if command -v "curl" &> /dev/null; then
+        curl -LsSo "$output" "$url" &> /dev/null
+        #     │││└─ write output to file
+        #     ││└─ show error messages
+        #     │└─ don't show the progress meter
+        #     └─ follow redirects
+
+        return $?
+    elif command -v "wget" &> /dev/null; then
+
+        wget -qO "$output" "$url" &> /dev/null
+        #     │└─ write output to file
+        #     └─ don't show output
+
+        return $?
+    fi
+    return 1
 }
