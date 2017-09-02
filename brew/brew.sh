@@ -1,12 +1,6 @@
 #!/usr/bin/env bash
 # Install Homebrew
 
-# Ask for the administrator password upfront.
-sudo -v
-
-# Keep-alive: update existing `sudo` time stamp until the script has finished.
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 if test ! $(which brew)
 then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -68,9 +62,10 @@ formulas=(
 
 for formula in "${formulas[@]}"; do
   if brew list "${formaula}" > /dev/null 2>&1; then
-    echo "$formula already installed...skipping."
+    print_info "$formula already installed...skipping."
   else
     brew install $formula
+    print_result $? "brew formula $formula installed."
   fi
 done
 
@@ -78,7 +73,7 @@ brew cleanup
 
 if ! grep -Fxq "/usr/local/bin/bash" /etc/shells; then
   # We installed the new shell, now we have to activate it
-  echo "Adding the newly installed shell to the list of allowed shells"
+  print_info "Adding the newly installed shell to the list of allowed shells"
   # Prompts for password
   sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 fi

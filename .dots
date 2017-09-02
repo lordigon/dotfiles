@@ -27,14 +27,9 @@ function runDots() {
             # For a full listing of installed formulae and apps, refer to
             # the commented brew.sh source file directly and tweak it to
             # suit your needs.
-            echo ""
-            echo "------------------------------"
-            echo "Installing Homebrew along with some common formulae and apps."
-            echo "This might awhile to complete, as some formulae need to be installed from source."
-            echo "------------------------------"
-            echo ""
+            print_install_step_info "Installing Homebrew along with some common formulae and apps. This might awhile to complete."
             source ./brew/brew.sh
-            source ./brew/brew-cask.sh
+            #source ./brew/brew-cask.sh
         fi
         if [ $ARG == "osx" ] || [ $ARG == "all" ]; then
             # Run the osx.sh Script
