@@ -18,13 +18,22 @@ if ! xcode-select --print-path &> /dev/null; then
 
   print_info "Installing Command Line Tools"
 
+  # Unattende way to install XCode command line tools
+  touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+  PROD=$(softwareupdate -l |
+    grep "\*.*Command Line" |
+    head -n 1 | awk -F"*" '{print $2}' |
+    sed -e 's/^ *//' |
+    tr -d '\n')
+  softwareupdate -i "$PROD" -v;
+
   # Prompt user to install the Xcode Command Line Tools
-  xcode-select --install &> /dev/null
+  #xcode-select --install &> /dev/null
 
   # Wait until the Xcode Command Line Tools are installed
-  until xcode-select --print-path &> /dev/null; do
-    sleep 5
-  done
+  #until xcode-select --print-path &> /dev/null; do
+  #  sleep 5
+  #done
 
   print_result $? "Install Xcode Command Line Tools."
 
