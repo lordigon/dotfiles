@@ -20,7 +20,7 @@ function runDots() {
             #echo "Updating OSX and installing Xcode command line tools"
             #echo "------------------------------"
             #echo ""
-            ./osxprereq.sh
+            source ./osxprereq.sh
         fi
         if [ $ARG == "brew" ] || [ $ARG == "all" ]; then
             # Run the brew.sh Script
@@ -33,8 +33,8 @@ function runDots() {
             echo "This might awhile to complete, as some formulae need to be installed from source."
             echo "------------------------------"
             echo ""
-            ./brew/brew.sh
-            ./brew/brew-cask.sh
+            source ./brew/brew.sh
+            source ./brew/brew-cask.sh
         fi
         if [ $ARG == "osx" ] || [ $ARG == "all" ]; then
             # Run the osx.sh Script
@@ -49,7 +49,7 @@ function runDots() {
             echo "Setting sensible OSX defaults."
             echo "------------------------------"
             echo ""
-            ./osx.sh
+            source ./osx.sh
         fi
         if [ $ARG == "system" ] || [ $ARG == "all" ]; then
             # Run the install-link.sh script
@@ -57,7 +57,7 @@ function runDots() {
             echo "Setting up system files      ."
             echo "------------------------------"
             echo ""
-            ./install-link.sh
+            source ./install-link.sh
         fi
         if [ $ARG == "java" ] || [ $ARG == "all" ]; then
             # Run the pydata.sh Script
@@ -74,7 +74,7 @@ function runDots() {
               echo "Setting up local resources   ."
               echo "------------------------------"
               echo ""
-              ./localrc/install.sh
+             source ./localrc/install.sh
             fi
         fi
 
