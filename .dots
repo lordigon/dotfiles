@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./functions.sh
+source ./install_fn.sh
 
 function runDots() {
     # Ask for the administrator password upfront
@@ -13,12 +13,13 @@ function runDots() {
     for ARG in "$@"
     do
         if [ $ARG == "osxprereq" ] || [ $ARG == "all" ]; then
-            # Run the osxprep.sh Script
-            echo ""
-            echo "------------------------------"
-            echo "Updating OSX and installing Xcode command line tools"
-            echo "------------------------------"
-            echo ""
+            # Run the osxprereq.sh Script
+            print_install_step_info "Updating OSX and installing Xcode command line tools"
+            #echo ""
+            #echo "------------------------------"
+            #echo "Updating OSX and installing Xcode command line tools"
+            #echo "------------------------------"
+            #echo ""
             ./osxprereq.sh
         fi
         if [ $ARG == "brew" ] || [ $ARG == "all" ]; then
