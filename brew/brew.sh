@@ -50,7 +50,7 @@ formulas=(
   python
   python3
   'vim --override-system-vi'
-  'mac-vim --with-override-system-vim'
+  'macvim --with-override-system-vim'
   neovim/neovim/neovim
   reattach-to-user-namespace
   the_silver_searcher
