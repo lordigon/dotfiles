@@ -66,3 +66,9 @@ alias dcou="docker-compose up"
 
 # Show containers logs
 alias dcologs="docker-compose logs -f"
+
+# Start container
+alias dcostart="docker-compose start"
+
+# Stop running container
+alias dcostop="docker-compose stop"
