@@ -35,7 +35,7 @@ formulas=(
   less
   gzip
   bash
-  bash-completions2
+  bash-completions
   grep
   ack
   awscli
