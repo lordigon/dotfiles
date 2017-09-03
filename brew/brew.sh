@@ -36,7 +36,7 @@ formulas=(
   gzip
   bash
   bash-completions2
-  homebrew/dupes/grep
+  grep
   ack
   awscli
   git
@@ -50,7 +50,7 @@ formulas=(
   python3
   'vim --with-override-system-vi'
   'macvim --with-override-system-vim'
-  neovim/neovim/neovim
+  neovim
   reattach-to-user-namespace
   the_silver_searcher
   psgrep
