@@ -19,7 +19,7 @@ apps=(
   iterm2
   macvim
   mysqlworkbench
-  sublime-text3
+  sublime-text
   keka
   keycastr
   tower
