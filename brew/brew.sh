@@ -48,7 +48,7 @@ formulas=(
   trash
   python
   python3
-  'vim --override-system-vi'
+  'vim --with-override-system-vi'
   'macvim --with-override-system-vim'
   neovim/neovim/neovim
   reattach-to-user-namespace
