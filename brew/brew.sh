@@ -9,7 +9,6 @@ fi
 
 brew tap homebrew/bundle
 brew tap homebrew/core
-brew tap homebrew/dupes
 brew tap homebrew/php
 
 brew update
@@ -79,4 +78,4 @@ if ! grep -Fxq "/usr/local/bin/bash" /etc/shells; then
   sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 fi
 # Change to the new shell, prompts for password
-chsh -s /usr/local/bin/bash
+sudo chsh -s /usr/local/bin/bash
