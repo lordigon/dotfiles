@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ./functions.sh
+source ./install_fn.sh
 
 [[ -x $(command -v wget) ]] && CMD="wget --no-check-certificate -O -"
 [[ -x $(command -v curl) ]] > /dev/null 2>&1 && CMD="curl -#L"
