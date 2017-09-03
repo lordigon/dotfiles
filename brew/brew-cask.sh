@@ -30,7 +30,7 @@ apps=(
   virtualbox-extension-pack
   vagrant
   vlc
-  font-sauce-code-powerline
+  font-source-code-powerline
   font-source-code-pro
   font-source-sans-pro
   font-source-serif-pro
