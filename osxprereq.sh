@@ -11,7 +11,9 @@ if ! xcode-select --print-path &> /dev/null; then
     head -n 1 | awk -F"*" '{print $2}' |
     sed -e 's/^ *//' |
     tr -d '\n')
-  softwareupdate -i "$PROD" --verbose;
+  softwareupdate -i "$PROD";
 
   print_result $? "Install Xcode Command Line Tools."
+
+  \rm -rf /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 fi
