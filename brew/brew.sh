@@ -37,7 +37,6 @@ formulas=(
   bash
   bash-completion
   terminal-notifier
-  grep
   ack
   awscli
   git
@@ -50,7 +49,6 @@ formulas=(
   python
   python3
   'vim --with-override-system-vi'
-  'macvim --with-override-system-vim'
   neovim
   reattach-to-user-namespace
   the_silver_searcher
