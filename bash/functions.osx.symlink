@@ -14,3 +14,7 @@ function s() {
     subl "$@";
   fi;
 }
+# Set Teminal Title
+function term_title {
+  printf "\033]0;%s\007" "$1"
+}
