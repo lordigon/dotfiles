@@ -36,6 +36,7 @@ formulas=(
   gzip
   bash
   bash-completions
+  terminal-notifier
   grep
   ack
   awscli
@@ -78,4 +79,4 @@ if ! grep -Fxq "/usr/local/bin/bash" /etc/shells; then
   sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 fi
 # Change to the new shell, prompts for password
-sudo chsh -s /usr/local/bin/bash
+chsh -s /usr/local/bin/bash
