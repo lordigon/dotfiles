@@ -35,7 +35,7 @@ formulas=(
   less
   gzip
   bash
-  bash-completions
+  bash-completion
   terminal-notifier
   grep
   ack
