@@ -27,12 +27,16 @@ apps=(
   virtualbox-extension-pack
   vagrant
   vlc
-  font-source-code-powerline
   font-source-code-pro
   font-source-sans-pro
   font-source-serif-pro
   font-inconsolata
+  font-inconsolata-nerd-font
+  font-inconsolata-nerd-font-mono
   font-hermit
+  font-hermit-nerd-font
+  font-hermit-nerd-font-mono
+  'macvim --with-override-system-vim'
 )
 
 brew cask install "${apps[@]}"
