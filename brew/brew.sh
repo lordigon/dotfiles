@@ -57,6 +57,7 @@ formulas=(
   wget
   tmux
   jq
+  z
 )
 
 for formula in "${formulas[@]}"; do
