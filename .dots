@@ -44,7 +44,7 @@ function runDots() {
             echo "Setting sensible OSX defaults."
             echo "------------------------------"
             echo ""
-            source ./osx.sh
+            source ./osx/osx.sh
         fi
         if [ $ARG == "system" ] || [ $ARG == "all" ]; then
             # Run the install-link.sh script
