@@ -19,6 +19,3 @@ hdiutil attach $java_jdk_dmg
 sudo installer -pkg /Volumes/JDK\ 8\ Update\ 144/JDK\ 8\ Update\ 144.pkg -target /
 diskutil umount /Volumes/JDK\ 8\ Update\ 144/
 \rm $java_jdk_dmg
-
-export JAVA_HOME=$( /usr/libexec/java_home )
-export PATH=${JAVA_HOME}/bin:$PATH

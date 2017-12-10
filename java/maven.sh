@@ -13,6 +13,3 @@ mkdir -p ${M2_INSTALL_DIR}
 eval $CMD http://apache.osuosl.org/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz \
   | tar -xzC ${M2_INSTALL_DIR} --strip-components=1 && ln -s ${M2_INSTALL_DIR} ${M2_HOME}
 
-export M2_HOME
-export PATH=${M2_HOME}/bin:$PATH
-

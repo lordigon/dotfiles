@@ -2,7 +2,7 @@
 
 source ./functions.sh
 
-DOTFILES=$HOME/.dotfiles
+DOTFILES=$HOME/dotfiles
 
 print_info "\nCreating symlinks"
 print_info "=============================="
