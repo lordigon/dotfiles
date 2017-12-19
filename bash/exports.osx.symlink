@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if which brew &> /dev/null then
+if which brew &> /dev/null; then
   export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 fi;
