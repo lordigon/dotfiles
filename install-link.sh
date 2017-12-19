@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./functions.sh
+source ./install_fn.sh
 
 DOTFILES=$HOME/dotfiles
 
