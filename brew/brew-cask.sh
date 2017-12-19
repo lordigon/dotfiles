@@ -12,7 +12,7 @@ apps=(
   caffeine
   flux
   dash
-  gpgtools
+  gpg-suite
   iterm2
   macvim
   mysqlworkbench
