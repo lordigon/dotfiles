@@ -31,6 +31,32 @@ function runDots() {
             source ./brew/brew.sh
             source ./brew/brew-cask.sh
         fi
+        if [ $ARG == "system" ] || [ $ARG == "all" ]; then
+            # Run the install-link.sh script
+            echo "------------------------------"
+            echo "Setting up system files      ."
+            echo "------------------------------"
+            echo ""
+            source ./install-link.sh
+        fi
+        if [ $ARG == "java" ] || [ $ARG == "all" ]; then
+            # Run the pydata.sh Script
+            echo "------------------------------"
+            echo "Setting up Java development environment."
+            echo "------------------------------"
+            echo ""
+            source ./java/install.sh
+        fi
+        if [ $ARG == "localrc" ] || [ $ARG == "all" ]; then
+            if [ -d ./localrc ] && [ -f ./localrc/install.sh ]; then
+              # Run the install-link.sh script
+              echo "------------------------------"
+              echo "Setting up local resources   ."
+              echo "------------------------------"
+              echo ""
+             source ./localrc/install.sh
+            fi
+        fi
         if [ $ARG == "osx" ] || [ $ARG == "all" ]; then
             # Run the osx.sh Script
             # I strongly suggest you read through the commented osx.sh
@@ -46,33 +72,6 @@ function runDots() {
             echo ""
             source ./osx/osx.sh
         fi
-        if [ $ARG == "system" ] || [ $ARG == "all" ]; then
-            # Run the install-link.sh script
-            echo "------------------------------"
-            echo "Setting up system files      ."
-            echo "------------------------------"
-            echo ""
-            source ./install-link.sh
-        fi
-        if [ $ARG == "java" ] || [ $ARG == "all" ]; then
-            # Run the pydata.sh Script
-            echo "------------------------------"
-            echo "Setting up Java development environment."
-            echo "------------------------------"
-            echo ""
-            ./java/install.sh
-        fi
-        if [ $ARG == "localrc" ] || [ $ARG == "all" ]; then
-            if [ -d ./localrc ] && [ -f ./localrc/install.sh ]; then
-              # Run the install-link.sh script
-              echo "------------------------------"
-              echo "Setting up local resources   ."
-              echo "------------------------------"
-              echo ""
-             source ./localrc/install.sh
-            fi
-        fi
-
         #if [ $ARG == "aws" ] || [ $ARG == "all" ]; then
             # Run the aws.sh Script
         #    echo "------------------------------"
