@@ -19,6 +19,16 @@ if test "$(uname)" = "Darwin"; then
   unset file;
 fi
 
+# Add apps aliases
+app_aliases=$( find . -regex "^..*_aliases" -maxdepth 1 -type l )
+
+for file in $app_aliases ; do
+  [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done
+
+unset file
+unset app_aliases
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob;
 
