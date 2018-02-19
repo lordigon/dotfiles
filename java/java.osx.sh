@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # Java Mac OSX specific installation
-java_jdk_dmg=jdk-8u144-macosx-x64.dmg
+java_jdk_dmg=jdk-8u161-macosx-x64.dmg
 
-curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-macosx-x64.dmg > $HOME/Downloads/$java_jdk_dmg
+curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u161-b12/2f38c3b165be4555a1fa6e98c45e0808/jdk-8u161-macosx-x64.dmg > $HOME/Downloads/$java_jdk_dmg
 
-generatedhash=$(md5 -q $java_jdk_dmg)
-java_jdk_dmg_hash=b96375812255bf23f84cdb0c8fd2606b
+generatedhash=$(md5 -q $HOME/Downloads/$java_jdk_dmg)
+java_jdk_dmg_hash=f2df502b145d78ae2ab1bb4b6c3301d4
 
 if [[ $generatedhash != $java_jdk_dmg_hash ]]; then
   # Recuperare il nome dello script come al solito.
@@ -14,8 +14,8 @@ if [[ $generatedhash != $java_jdk_dmg_hash ]]; then
   return
 fi
 
-hdiutil attach $java_jdk_dmg
+hdiutil attach $HOME/Downloads/$java_jdk_dmg
 
-sudo installer -pkg /Volumes/JDK\ 8\ Update\ 144/JDK\ 8\ Update\ 144.pkg -target /
-diskutil umount /Volumes/JDK\ 8\ Update\ 144/
-\rm $java_jdk_dmg
+sudo installer -pkg /Volumes/JDK\ 8\ Update\ 161/JDK\ 8\ Update\ 161.pkg -target /
+diskutil umount /Volumes/JDK\ 8\ Update\ 161/
+\rm $HOME/Downloads/$java_jdk_dmg
