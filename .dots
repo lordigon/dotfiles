@@ -28,8 +28,13 @@ function runDots() {
             # the commented brew.sh source file directly and tweak it to
             # suit your needs.
             print_install_step_info "Installing Homebrew along with some common formulae and apps. This might awhile to complete."
-            source ./brew/brew.sh
-            source ./brew/brew-cask.sh
+            
+            pushd ./brew
+            
+            source ./brew.sh
+            source ./brew-cask.sh
+            
+            popd
         fi
         if [ $ARG == "system" ] || [ $ARG == "all" ]; then
             # Run the install-link.sh script
@@ -45,7 +50,12 @@ function runDots() {
             echo "Setting up Java development environment."
             echo "------------------------------"
             echo ""
-            source ./java/install.sh
+
+            pushd ./java
+            
+            source ./install.sh
+
+            popd
         fi
         if [ $ARG == "localrc" ] || [ $ARG == "all" ]; then
             if [ -d ./localrc ] && [ -f ./localrc/install.sh ]; then
