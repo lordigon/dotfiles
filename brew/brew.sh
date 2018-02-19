@@ -36,6 +36,7 @@ formulas=(
   gzip
   bash
   bash-completion
+  telnet
   terminal-notifier
   ack
   awscli
