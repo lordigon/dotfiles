@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#========== Maven aliases ==========
+
+alias mci="mvn clean install"
+
+alias mcist="mvn clean install -DskipTests"
+
+alias mctc="mvn clean test-compile"
+
+alias mdep='mvn dependency:tree'
+
+alias mpom='mvn help:effective-pom'
