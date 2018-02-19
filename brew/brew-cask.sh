@@ -23,9 +23,10 @@ apps=(
   macdown
   docker
   beyond-compare
-  virtualbox
-  virtualbox-extension-pack
-  vagrant
+  # Problems with HighSierra security restriction.
+  #virtualbox
+  #virtualbox-extension-pack
+  #vagrant
   vlc
   font-source-code-pro
   font-source-sans-pro
